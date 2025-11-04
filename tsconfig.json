@@ -24,10 +24,7 @@
   },
   "include": [
     "src",
-    "package.json",
-    "pm2.dev.json",
-    "pm2.test.json",
-    "pm2.prod.json"
+    "package.json"
   ],
   "compileOnSave": true
 }

@@ -3,8 +3,9 @@
 /node_modules
 
 # src/common/config/ 下的文件不上传
-/src/common/config/*
+src/common/config/config_dev_local.ts
 
+.env
 
 *.spec.ts
 
