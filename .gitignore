@@ -2,10 +2,10 @@
 /dist
 /node_modules
 
-/common/config/config_dev_local.ts
-/common/config/config_dev_service.ts
-/common/config/config_prod.ts
-/common/config/config_test.ts
+/src/common/config/config_dev_local.ts
+/src/common/config/config_dev_service.ts
+/src/common/config/config_prod.ts
+/src/common/config/config_test.ts
 
 *.spec.ts
 
