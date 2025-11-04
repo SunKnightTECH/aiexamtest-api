@@ -2,8 +2,6 @@
 /dist
 /node_modules
 
-/src/common/config
-
 
 *.spec.ts
 
