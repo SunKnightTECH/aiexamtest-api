@@ -2,10 +2,8 @@
 /dist
 /node_modules
 
-src/common/config/config_dev_local.ts
-src/common/config/config_dev_service.ts
-src/common/config/config_prod.ts
-src/common/config/config_test.ts
+# src/common/config/ 下的文件不上传
+/src/common/config/*
 
 
 *.spec.ts
