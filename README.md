@@ -1,73 +1,132 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# AI Exam Test API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+AI Exam Test 是一个基于 NestJS 的后端 API 服务，用于提供智能试卷评价功能。
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 功能特性
 
-## Description
+- 用户认证与授权
+- 考试题目管理
+- 智能评分系统
+- 数据统计与分析
+- 基于 Redis 的缓存机制
+- MongoDB 数据存储
+- OpenAI 集成
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 环境配置
 
-## Installation
+项目支持多种环境配置：
+
+- `dev`: 开发环境
+- `devService`: 开发服务环境
+- `test`: 测试环境
+- `prod`: 生产环境
+
+### 配置文件说明
+
+在 `src/common/config/` 目录下有针对不同环境的配置文件：
+
+- `config_dev_local.ts`: 本地开发环境配置
+- `config_dev_service.ts`: 开发服务环境配置
+- `config_test.ts`: 测试环境配置
+- `config_prod.ts`: 生产环境配置
+
+### 配置项说明
+
+每个配置文件都包含以下主要配置项：
+
+- `domain`: 服务域名
+- `port`: 服务端口
+- `redisconfig`: Redis 连接配置
+- `jwtconfig`: JWT 认证配置
+- `mongoDBConfig`: MongoDB 连接配置
+- `openaiConfig`: OpenAI API 配置
+
+要切换环境，请设置 `BUILD_ENV` 环境变量。
+
+## 部署指南
+
+### 环境要求
+
+- Node.js >= 16.x
+- pnpm >= 8.x
+- MongoDB >= 5.x
+- Redis >= 6.x
+
+### 安装依赖
 
 ```bash
-$ npm install
+pnpm install
 ```
 
-## Running the app
+### 开发环境运行
 
 ```bash
-# development
-$ npm run start
+# 本地开发模式
+pnpm run dev
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# 开发服务模式
+pnpm run devService
 ```
 
-## Test
+### 生产环境构建与运行
 
 ```bash
-# unit tests
-$ npm run test
+# 构建项目
+pnpm run build
 
-# e2e tests
-$ npm run test:e2e
+# 运行生产环境
+pnpm run prod
 
-# test coverage
-$ npm run test:cov
+# 或者直接运行构建后的代码
+pnpm run start:prod
 ```
 
-## Support
+### 测试
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+# 运行所有测试
+pnpm run test
 
-## Stay in touch
+# 运行端到端测试
+pnpm run test:e2e
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# 运行测试并生成覆盖率报告
+pnpm run test:cov
+```
 
-## License
+### 其他命令
 
-Nest is [MIT licensed](LICENSE).
+```bash
+# 格式化代码
+pnpm run format
+
+# 代码检查与修复
+pnpm run lint
+```
+
+## 项目结构
+
+```
+src/
+├── common/          # 公共模块
+│   ├── auth/        # 认证相关
+│   ├── config/      # 配置文件
+│   ├── filter/      # 过滤器
+│   ├── interceptor/ # 拦截器
+│   ├── rediscache/  # Redis 缓存
+│   └── utils/       # 工具函数
+├── controller/      # 控制器
+├── schema/          # 数据模型
+└── main.ts          # 应用入口
+```
+
+## 环境变量
+
+在部署时，请确保设置了正确的环境变量：
+
+- `BUILD_ENV`: 构建环境 (dev/devService/test/prod)
+- `PORT`: 服务端口 (可选，默认为配置文件中的端口)
+
+## 许可证
+
+本项目未指定许可证。

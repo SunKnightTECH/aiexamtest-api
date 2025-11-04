@@ -8,15 +8,15 @@ const config: configType = {
     port: 10221,
     //redis配置
     redisconfig: {
-        host: "",
-        port: 0,
-        password: "",
+        host: "nas.lzz.plus",
+        port: 10001,
+        password: "ezxgcD16O@QyaGB*",
         db: 3, // 目标库
     },
     //jwt配置
     jwtconfig: {
         //生成token的key
-        secret: "",
+        secret: "secretapidev",
         // signOption可以在JwtModule设定
         // 或是在createToken时候设定
         signOptions: {
@@ -25,16 +25,16 @@ const config: configType = {
         },
     },
     mongoDBConfig: {
-        uri: ``,
+        uri: `mongodb://admin:AUxh4JF2Pa0IET3@nas.lzz.plus:10002/aiexamtest?authSource=admin`,
         retryAttempts: 5, //重试次数
         retryDelay: 1500, //重试间隔
         maxPoolSize: 500,
         maxConnecting: 500,
     },
     openaiConfig: {
-        apiKey: "",
-        baseURL: "",
-        model: "",
+        apiKey: "sk-f4a26586fbfe48f488e7aa666867b24e",
+        baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        model: "qwen3-max",
     }
 };
 export default config;
