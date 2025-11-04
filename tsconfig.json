@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "lib": [
+      "esnext"
+    ],
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "removeComments": true, //删除注释
+    "resolveJsonModule": true,
+    "declaration": true //生成声明文件
+  },
+  "include": [
+    "src",
+    "package.json",
+    "pm2.dev.json",
+    "pm2.test.json",
+    "pm2.prod.json"
+  ],
+  "compileOnSave": true
+}
